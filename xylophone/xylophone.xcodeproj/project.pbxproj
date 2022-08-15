@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6222B53F28AAA83D0046DFA1 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6222B53E28AAA83D0046DFA1 /* View.swift */; };
+		6222B54128AACDE20046DFA1 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6222B54028AACDE20046DFA1 /* Note.swift */; };
+		6222B54328AACE620046DFA1 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6222B54228AACE620046DFA1 /* Button.swift */; };
 		62C556B328AA5D6E005EB852 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C556B228AA5D6E005EB852 /* AppDelegate.swift */; };
 		62C556B528AA5D6E005EB852 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C556B428AA5D6E005EB852 /* SceneDelegate.swift */; };
 		62C556B728AA5D6E005EB852 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C556B628AA5D6E005EB852 /* ViewController.swift */; };
@@ -37,6 +39,8 @@
 
 /* Begin PBXFileReference section */
 		6222B53E28AAA83D0046DFA1 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		6222B54028AACDE20046DFA1 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		6222B54228AACE620046DFA1 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		62C556AF28AA5D6E005EB852 /* xylophone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xylophone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62C556B228AA5D6E005EB852 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62C556B428AA5D6E005EB852 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				6222B53E28AAA83D0046DFA1 /* View.swift */,
+				6222B54228AACE620046DFA1 /* Button.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -114,6 +119,7 @@
 				62C556BB28AA5D70005EB852 /* Assets.xcassets */,
 				62C556BD28AA5D70005EB852 /* LaunchScreen.storyboard */,
 				62C556C028AA5D70005EB852 /* Info.plist */,
+				6222B54028AACDE20046DFA1 /* Note.swift */,
 			);
 			path = xylophone;
 			sourceTree = "<group>";
@@ -265,6 +271,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6222B54128AACDE20046DFA1 /* Note.swift in Sources */,
+				6222B54328AACE620046DFA1 /* Button.swift in Sources */,
 				6222B53F28AAA83D0046DFA1 /* View.swift in Sources */,
 				62C556B728AA5D6E005EB852 /* ViewController.swift in Sources */,
 				62C556B328AA5D6E005EB852 /* AppDelegate.swift in Sources */,

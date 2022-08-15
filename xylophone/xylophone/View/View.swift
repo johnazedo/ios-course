@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class View: UIView {
-    
+    let PADDING_PER_BUTTON = 20.0
     
     init(){
         super.init(frame: .zero)
@@ -23,47 +23,60 @@ class View: UIView {
     
     private func addView(){
         let stack = UIStackView()
-        stack.axis = NSLayoutConstraint.Axis.vertical
-        stack.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        stack.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        stack.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
-        stack.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
-                
-        let button_one = Button(label: "C", color: .red, padding: 0.0)
-        let button_two = Button(label: "D", color: .blue, padding: 5.0)
-        
-        stack.addSubview(button_one)
-        stack.addSubview(button_two)
         addSubview(stack)
+        var button: Button
+        let labels = ["Dó", "Re", "Mi", "Fá", "Sol", "Lá", "Si"]
+        
+        for (index, val) in labels.enumerated() {
+            button = Button(label: val, color: UIColor.red)
+            stack.addArrangedSubview(button)
+            button.setParentWidthAnchor(
+                anchor: stack.widthAnchor,
+                padding: getButtonPadding(value: index)
+            )
+        }
+        
+        stack.axis = .vertical
+        stack.distribution = .equalSpacing
+        stack.alignment = .center
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        stack.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        stack.widthAnchor.constraint(equalTo: self.safeAreaLayoutGuide.widthAnchor).isActive = true
+        stack.heightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.heightAnchor).isActive = true
+    }
+    
+    private func getButtonPadding(value: Int) -> CGFloat {
+        return -Double(value)*PADDING_PER_BUTTON
     }
     
     private func setupView(){
-        backgroundColor = .white
+        backgroundColor = .black
     }
 }
 
-class Button: UIButton {
-    var color: UIColor
-    var label: String
-    var padding: CGFloat
-
-    
-    init(label: String, color: UIColor, padding: CGFloat){
-        self.color = color
-        self.label = label
-        self.padding = padding
- 
-        // What is this UIControl.State?
-        super.init(frame: .zero)
-        guard let anchor = superview?.widthAnchor else { return }
-        setTitle(label, for: .normal)
-        setTitleColor(.white, for: .normal)
-        translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = color
-        widthAnchor.constraint(equalTo: anchor, constant: -padding).isActive = true
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("Cannot start with XIB or Storyboard")
-    }
-}
+//class Button: UIButton {
+//    var color: UIColor
+//    var label: String
+//
+//    
+//    init(label: String, color: UIColor){
+//        self.color = color
+//        self.label = label
+// 
+//        // What is this UIControl.State?
+//        super.init(frame: .zero)
+//        setTitle(label, for: .normal)
+//        setTitleColor(.white, for: .normal)
+//        translatesAutoresizingMaskIntoConstraints = false
+//        backgroundColor = color
+//    }
+//    
+//    func setParentWidthAnchor(anchor: NSLayoutDimension, padding: CGFloat) {
+//        widthAnchor.constraint(equalTo: anchor, constant: padding).isActive = true
+//    }
+//    
+//    required init?(coder: NSCoder) {
+//        fatalError("Cannot start with XIB or Storyboard")
+//    }
+//}
